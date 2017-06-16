@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main" ng-cloak>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="canonical" href="/web/tweet-button">
+    <title>Stove</title>
+</head>
+
+<body class="main_page">
+
+    <div ng-controller="mainCtrl" ng-hide="hideit">
+        <div class="container" ng-init="load()">
+
+            <form class="form-ad-search form-horizontal" id="ad-search" role="form">
+                <p class="form-ad-search-heading text-center">Advance Search</p>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <input type="text" id="city" placeholder="City" class="form-control" g-places-autocomplete force-selection="true" ng-model="place" autofocus>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" id="term" ng-model="term" placeholder="Term" class="form-control" autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-block btn-primary" ng-click="spin()">Spin</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="container centered sug_info" ng-show="suggestion">
+            <a id="suggestion"></a>
+            <div class="row table-row">
+                <div class="col-sm-3 nopadding sug-item">
+                    <h4 class="Place">{{suggestion.name}}</h4>
+                    <div class="rating">
+                        <img ng-src="{{suggestion.rating_img_url_large}}" alt="rating {{suggestion.rating}}">
+                    </div>
+                    <div class="info">
+                        <p class="Phone">Phone: {{suggestion.phone}}</p>
+                        <div class="add" ng-repeat="line in suggestion.location.display_address">
+                            <p class="display_add">{{line}}</p>
+                        </div>
+                        <a href={{suggestion.url}}>Yelp Profile</a>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-3 mypadding sug-item">
+                    <img ng-src={{suggestion.image_url}} alt="{{suggestion.name}}'s picture" class="sugg_pic pull-right" />
+                </div>
+                <div class="col-sm-6 sug-item">
+                    <ng-map ng-controller="locationCrtl" class="map" zoom="19" center="[{{suggestion.location.coordinate.latitude}}, {{suggestion.location.coordinate.longitude}}]">
+                        <marker position="[{{suggestion.location.coordinate.latitude}}, {{suggestion.location.coordinate.longitude}}]" title="{{suggestion.name}}" centered="true" />
+                    </ng-map>
+                </div>
+                <div class="social_media_share">
+                    <div class="fb-share-button" data-href="https://mia-stove.herokuapp.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" ng-click="fbshare()">Share</a></div>
+                    <a class="twitter-share-button social_btn" href="https://twitter.com/intent/tweet" data-url= "https://mia-stove.herokuapp.com/"  data-text="I am going try {{suggestion.name}} recommended by stove. Use stove and never worry about where to eat" data-size="large">Tweet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/twitter.js"></script>
+</body>
+
+</html>

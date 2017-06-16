@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main" ng-cloak>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stove</title>
+</head>
+
+<body class="profile_info">
+    <div class="container" ng-controller="profileCtrl" ng-init="load()">
+        <div class="alert alert-danger" ng-show="SignUperrorMsg">{{SignUperrorMsg}}</div>
+        <form class="form-signin" role="form">
+            <h2 class="form-signup-heading">Edit Profile Information:</h2>
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <div class="name">
+                    <input type="text" id="firstName" ng-model="firstName" placeholder={{user.firstName}} class="form-control" autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <div class="name">
+                    <input type="text" id="lastName" ng-model="lastName" placeholder={{user.lastName}} class="form-control" autofocus>
+                </div>
+            </div>
+          	<div class="form-group"> <!-- Email field !-->
+          		<label for="email">Email:</label>
+                  <div class="name">
+          		        <input type="email" class="form-control" id="email" ng-model="email" placeholder={{user.email}} autofocus>
+                  </div>
+          	</div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <div class="name">
+                    <input type="text" id="city" ng-model="city" placeholder={{user.city}} class="form-control" autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <div class="name">
+                    <input type="text" id="country" ng-model="country" placeholder={{user.country}} class="form-control" autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <button type="submit" class="btn btn-primary btn-block" id="editProfile" ng-click="edit()">Update Profile</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

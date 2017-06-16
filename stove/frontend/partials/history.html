@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main" ng-cloak>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stove</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<div class="container" ng-controller="historyCtrl" data-ng-init="refresh()">
+    <div>
+        <h2>History</h2>
+    </div>
+    <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+        <div class="history_item" ng-repeat="place in history">
+            <img class="history_item_image" src="{{place.image}}" alt="{{place.name}}">
+            <div class="info">
+                <h4 class="info_item">{{place.name}}</h4>
+                <p>{{place.address}}</p>
+                <a href="{{place.url}}">Yelp Profile</a>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

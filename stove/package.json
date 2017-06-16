@@ -1,0 +1,25 @@
+{
+  "name": "stove",
+  "version": "1.0.0",
+  "description": "Web Application that provide local resturant suggestion to its users",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha",
+    "postinstall": "bower install"
+  },
+  "author": "Team M.I.A",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bower": "^1.8.0",
+    "crypto": "0.0.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "express-validator": "^3.1.2",
+    "mongoose": "^4.9.1",
+    "path": "^0.12.7",
+    "util": "^0.10.3",
+    "yelp": "^1.0.2"
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main" ng-cloak>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stove</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/autocomplete.css">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body class="main_page">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/" id="main_title" title="Home"></a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/#!/profile">View Profile</a></li>
+                            <li><a href="/#!/editprofile">Edit Profile</a></li>
+                            <li><a href="/#!/history">History</a></li>
+                            <li><a ng-controller="mainCtrl" ng-click="signout()">Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div ng-view></div>
+
+
+    <footer class="footer">
+    <div class="container footer_content">
+        <p class="text-muted footer_item"><a href="/credits.html">Credits</a></p>
+        <p class="text-muted footer_item">&copy; Team M.I.A.</p>
+    </div>
+    </footer>
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script type='text/javascript' src='bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js'></script>
+    <script src="js/ng-map.min.js"></script>
+    <script src="js/autocomplete.js"></script>
+    <script src="js/fb.js"></script>
+    <script src="js/twitter.js"></script>
+    <script src="js/main.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAVR4ZQPns0sRBZ93_x7fVHTJstoO9U3cw&libraries=places"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

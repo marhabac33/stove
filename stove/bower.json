@@ -1,0 +1,26 @@
+{
+  "name": "stove",
+  "description": "Web Application that provide local resturant suggestion to its users",
+  "main": "index.html",
+  "authors": [
+    "Team M.I.A"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "CSCC09"
+  ],
+  "homepage": "https://github.com/UTSCC09/MIA",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "bootstrap": "^3.3.7",
+    "ngInfiniteScroll": "^1.3.4"
+  }
+}
